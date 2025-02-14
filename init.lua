@@ -243,7 +243,7 @@ require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'jiangmiao/auto-pairs',
   'landerson02/ghostty-theme-sync.nvim',
-  --'Exafunction/codeium.vim',
+  'Exafunction/codeium.vim',
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
