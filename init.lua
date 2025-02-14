@@ -651,6 +651,11 @@ require('lazy').setup({
           -- capabilities = {},
           settings = {
             Lua = {
+              workspace = {
+                library = {
+                  '${3rd}/love2d/library',
+                },
+              },
               completion = {
                 callSnippet = 'Replace',
               },
