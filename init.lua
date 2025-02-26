@@ -83,8 +83,9 @@ I hope you enjoy your Neovim journey,
 
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
-local projectfile = vim.fn.getcwd() .. '/project.godot'
-if projectfile then
+local gdproject = io.open(vim.fn.getcwd() .. 'project.godot', 'r')
+if gdproject then
+  io.close(gdproject)
   vim.fn.serverstart './godothost'
 end
 -- Set <space> as the leader key
@@ -635,6 +636,7 @@ require('lazy').setup({
         gopls = {},
         pyright = {},
         rust_analyzer = {},
+        omnisharp = {},
         --gdscript = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -683,7 +685,7 @@ require('lazy').setup({
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
       })
-      require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+      require('mason-tool-installer').setup { ensure_installed = { ensure_installed, 'codelldb' } }
 
       require('mason-lspconfig').setup {
         handlers = {

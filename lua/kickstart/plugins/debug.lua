@@ -87,6 +87,21 @@ return {
     dap.configurations.gdscript = {
       { type = 'godot', request = 'launch', name = 'Launch scene', project = '${workspaceFolder}', launch_scene = true },
     }
+    dap.adapters.coreclr = {
+      type = 'executable',
+      command = '/usr/local/bin/netcoredbg/netcoredbg',
+      args = { '--interpreter=vscode' },
+    }
+    dap.configurations.cs = {
+      {
+        type = 'coreclr',
+        name = 'launch - netcoredbg',
+        request = 'launch',
+        program = function()
+          return vim.fn.input 'Path to DLL to debug: ', vim.fn.getcwd() .. '/bin/Debug/', 'file'
+        end,
+      },
+    }
 
     local dapui = require 'dapui'
 
