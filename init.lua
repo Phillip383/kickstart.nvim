@@ -1,5 +1,6 @@
 if vim.g.vscode then
-  -- don't load regular configurations.
+  --VSCODE configurations
+  vim.opt.clipboard = "unnamedplus"
 else
   local gdproject = io.open(vim.fn.getcwd() .. 'project.godot', 'r')
   if gdproject then
