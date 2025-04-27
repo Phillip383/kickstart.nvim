@@ -14,7 +14,7 @@ else
   vim.g.maplocalleader = ' '
 
   -- Set to true if you have a Nerd Font installed and selected in the terminal
-  vim.g.have_nerd_font = false
+  vim.g.have_nerd_font = true
 
   -- [[ Setting options ]]
   -- See `:help vim.opt`
@@ -79,7 +79,7 @@ else
   -- Minimal number of screen lines to keep above and below the cursor.
   vim.opt.scrolloff = 10
 
-  -- [[ Basic Keymaps ]]
+-- [[ Basic Keymaps ]]
   --  See `:help vim.keymap.set()`
 
   -- Clear highlights on search when pressing <Esc> in normal mode
