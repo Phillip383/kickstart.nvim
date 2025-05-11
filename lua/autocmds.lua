@@ -12,3 +12,14 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 	end,
 })
 
+-- vim.cmd [[
+--    highlight Normal guibg=NONE ctermbg=NONE
+--    highlight NonText guibg=NONE ctermbg=NONE
+--]]
+
+--vim.cmd [[
+--	augroup TransparentBackground
+--		autocmd!
+--		autocmd ColorScheme * highlight Normal guibg=NONE ctermbg=NONE
+--	augroup END
+--]]
